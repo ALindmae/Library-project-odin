@@ -1,0 +1,106 @@
+/* -- CSS RESET -- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+  width: 100%;
+}
+
+
+/* -- VARIABLES -- */
+
+
+/* -- CSS STYLES -- */
+
+.grid-container {
+    display: grid;
+    grid-template-rows: max-content max-content;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem 2.5rem;
+}
+
+.search-form {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    flex-shrink: 0;
+}
+
+.search-icon {
+    fill: black;
+    width: 1.5rem;
+    flex-shrink: 0;
+}
+
+.search-input {
+    border: none;
+    background-color: rgb(231, 230, 230);
+    border-radius: 25px;
+    flex: 1 1 none;
+    min-width: 0;
+    height: 2rem;
+}
+
+.header h2 {
+    place-self: center;
+}
+
+.add-books-button {
+    justify-self: end;
+    padding: 0.5rem 2.5rem;
+    border-radius: 25px;
+    border: none;
+}
