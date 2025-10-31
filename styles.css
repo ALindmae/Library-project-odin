@@ -104,3 +104,105 @@ html, body {
     border-radius: 25px;
     border: none;
 }
+
+
+/* Main content */
+
+.main-content {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(150px, 500px));
+    gap: 2rem;
+    
+    padding: 2rem;
+    background-color: rgb(244, 242, 242);
+}
+
+.card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    padding: 1rem;
+    background-color: #3D1E6D;
+    border-radius: 20px;
+    max-height: 450px;
+}
+
+.card-controls {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.delete-book {
+
+    background-color: transparent;
+    border: none;
+}
+
+.delete-icon {
+    width: 1.5rem;
+    fill: #ECA72C;
+}
+
+.read-button { 
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.4rem 1.8rem;  
+    border-radius: 25px;
+    border: none;
+    fill: #ECA72C;
+
+}
+
+.read-icon {
+    width: 1.5rem;
+}
+
+.button-text{
+}
+
+.card-content{
+    display: flex;
+    gap: 1rem;
+
+    padding: 2rem;
+    color: #ECA72C;
+
+}
+
+.genre.icon {
+    width: 7rem;
+    fill:#ECA72C;
+    flex-shrink: 0;
+}
+
+.book-title {
+    /* font-size: 32px; */
+    font-size: clamp(1.4rem, 1.5vw + 0.8rem, 2.1rem);
+    font-weight: bold;
+}
+
+.book-author {
+    /* font-size: 24px; */
+    font-size: clamp(1.1rem, 1vw + 0.7rem, 1.6rem);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+
+.book-author span {
+    font-size: clamp(1.0rem, 1vw + 0.6rem, 1.4rem);
+    font-weight: 500;
+}
+
+.book-info {
+    display: flex;
+    gap: 1rem;
+
+    margin-top: 0.5rem;
+    border-top: 0.5px solid black;
+
+    padding-top: 0.5rem;
+}
