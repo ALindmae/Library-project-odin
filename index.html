@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Books library</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./javascript.js" defer></script>
 </head>
 <body>
-
+    <div class="grid-container">
+        <div class="header">
+            <div class="search">
+                <form id="searchForm">
+                    <button id="search-button" ><svg class="search-icon"></svg></button>
+                    <input id="search-field" type="search"></input>
+                </form>
+            </div>
+            <h2> My Library </h2>
+            <button class="add-books-button"></button>
+        </div>
+        <div class="main-content">
+            <div class="card">
+                <div class="card-controls">
+                    <button class="delete-book"></button>
+                    <button class="read-button"> <svg class="read card-control-icon"></svg> Read </button>
+                </div>
+                <div class="card-content">
+                    <svg class="card-genre-icon"></svg>
+                    <div class="card-info">
+                        <p class="book-title"> Deep Work </p>
+                        <p class="book-author"> <span>By</span> Cal Newport </p>
+                        <div class="book-info">
+                            <p class="book-genre"> Self-help </p>
+                            <p class="book-pages"> 250 <span>pages</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
