@@ -110,7 +110,8 @@ html, body {
 
 .main-content {
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(150px, 500px));
+    grid-template-columns: repeat(auto-fill, minmax(clamp(250px, 40vw, 500px), 1fr));
+    justify-content: center;
     gap: 2rem;
     
     padding: 2rem;
@@ -124,17 +125,15 @@ html, body {
     padding: 1rem;
     background-color: #3D1E6D;
     border-radius: 20px;
-    max-height: 450px;
+    max-height: 550px;
 }
 
 .card-controls {
     display: flex;
     justify-content: space-between;
-
 }
 
 .delete-book {
-
     background-color: transparent;
     border: none;
 }
@@ -147,45 +146,53 @@ html, body {
 .read-button { 
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5em;
 
-    padding: 0.4rem 1.8rem;  
+    padding: 0.4em 1.8em;  
     border-radius: 25px;
     border: none;
     fill: #ECA72C;
 
+    font-size: clamp(1rem, 1.1rem);
 }
 
 .read-icon {
-    width: 1.5rem;
+    width: 1.5em;
 }
 
 .button-text{
+    font-weight: 500;
 }
 
 .card-content{
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 
     padding: 2rem;
     color: #ECA72C;
-
 }
 
+.card-info{ 
+    height: clamp(17vw, 35vw, 250px);
+
+    min-width: 160px;
+    flex: 1 1 100px;
+}
+
+
 .genre.icon {
-    width: 7rem;
+    width: clamp(4.67rem, 5vw + 2.7rem, 7rem);
     fill:#ECA72C;
     flex-shrink: 0;
 }
 
 .book-title {
-    /* font-size: 32px; */
     font-size: clamp(1.4rem, 1.5vw + 0.8rem, 2.1rem);
     font-weight: bold;
 }
 
 .book-author {
-    /* font-size: 24px; */
     font-size: clamp(1.1rem, 1vw + 0.7rem, 1.6rem);
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -202,7 +209,7 @@ html, body {
     gap: 1rem;
 
     margin-top: 0.5rem;
-    border-top: 0.5px solid black;
-
+    border-top: 0.5px solid #ECA72C;
     padding-top: 0.5rem;
+    font-size: clamp(0.9rem, 0.4vw + 0.8rem, 1.1rem);
 }
