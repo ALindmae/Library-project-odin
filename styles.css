@@ -171,15 +171,16 @@ html, body {
 
     padding: 2rem;
     color: #ECA72C;
+    height: 100%;
 }
 
 .card-info{ 
     height: clamp(17vw, 35vw, 250px);
 
     min-width: 160px;
+    width: 100%;
     flex: 1 1 100px;
 }
-
 
 .genre.icon {
     width: clamp(4.67rem, 5vw + 2.7rem, 7rem);
@@ -198,7 +199,6 @@ html, body {
     margin-bottom: 0.5rem;
 }
 
-
 .book-author span {
     font-size: clamp(1.0rem, 1vw + 0.6rem, 1.4rem);
     font-weight: 500;
@@ -206,10 +206,13 @@ html, body {
 
 .book-info {
     display: flex;
-    gap: 1rem;
 
     margin-top: 0.5rem;
     border-top: 0.5px solid #ECA72C;
     padding-top: 0.5rem;
     font-size: clamp(0.9rem, 0.4vw + 0.8rem, 1.1rem);
+}
+
+.book-genre {
+    margin-right: 0.9em;
 }
