@@ -54,6 +54,154 @@ html, body {
 
 /* -- VARIABLES -- */
 
+.card.no-genre {
+    --primary-color: rgb(55, 55, 55) ;
+   --secondary-color:rgb(162, 162, 162);
+}
+
+/* Fantasy */
+.card.fantasy {
+  --primary-color: #3D1E6D;      /* deep violet */
+  --secondary-color: #ECA72C;    /* gold */
+  --accent-color: #EAD9FF;       /* lavender accent */
+}
+
+/* Science Fiction */
+.card.science-fiction {
+  --primary-color: #0F1CFF;      /* neon blue */
+  --secondary-color: #00f2c6;    /* aqua */
+  --accent-color: #0B0B0B;       /* black base */
+}
+
+/* Horror */
+.card.horror {
+  --primary-color: #1E0000;      /* blood black */
+  --secondary-color: #FF0033;    /* crimson */
+  --accent-color: #FFB347;       /* warm sickly orange */
+}
+
+/* Romance */
+.card.romance {
+  --primary-color: #6B1E3A;     /* rose pink */
+  --secondary-color: #FF3E6C;   /* blush */
+  --accent-color: #FFD2DC;      /* wine red */
+}
+
+/* Biography */
+.card.biography {
+  --primary-color: #003366;      /* navy */
+  --secondary-color: #e1bf01;    /* gold */
+  --accent-color: #F0F0F0;       /* light neutral */
+}
+
+/* Self-Help */
+.card.self-help {
+  --primary-color: #6A00FF;      /* electric purple */
+  --secondary-color: #00ed92;    /* mint */
+  --accent-color: #FDFDFD;       /* clean white */
+}
+
+/* Science */
+.card.science {
+  --primary-color: #1B1464;      /* deep indigo */
+  --secondary-color: #2bd5ca;    /* cyan */
+  --accent-color: #F5F8FF;       /* white-blue */
+}
+
+/* Business / Economics */
+.card.business {
+  --primary-color: #002147;      /* corporate blue */
+  --secondary-color: #EFA500;    /* amber */
+  --accent-color: #E8F0F8;       /* cool gray */
+}
+
+/* Philosophy */
+.card.philosophy {
+  --primary-color: #2D2A32;      /* graphite */
+  --secondary-color: #C89B3C;    /* antique gold */
+  --accent-color: #EDE6DB;       /* parchment */
+}
+
+/* Cooking */
+.card.cooking {
+  --primary-color: #fa703e;      /* spicy orange */
+  --secondary-color: #f6d324;    /* lemon yellow */
+  --accent-color: #F7F7F7;       /* white base */
+}
+
+/* Children's */
+.card.childrens {
+  --primary-color: #FFD93D;   /* sunny yellow */
+  --secondary-color: #FF6EC7; /* playful pink */
+  --accent-color: #00CFFF;    /* sky blue */
+}
+
+/* Health & Fitness */
+.card.health-fitness {
+  --primary-color: #2A9D8F;   /* deep teal */
+  --secondary-color: rgb(212, 217, 141); /* sun-gold */
+  --accent-color: #E9C46A;   /* light lime-green */
+}
+
+/* Art / Design */
+.card.art-design {
+  --primary-color: #2C3E50;   /* slate blue-gray */
+  --secondary-color: #d8dada; /* soft gray */
+  --accent-color: #95A5A6;    /* light silver-white */
+}
+
+/* Religion */
+.card.religion {
+  --primary-color: #3B1E54;      /* deep purple */
+  --secondary-color: #f1c066;    /* light gold */
+  --accent-color: #F9F7F1;       /* cream */
+}
+
+/* Poetry */
+.card.poetry {
+  --primary-color: #2A2A72;      /* midnight blue */
+  --secondary-color: #f5b0c5;    /* soft pink */
+  --accent-color: #C2F0FC;       /* pale aqua */
+}
+
+
+@media (max-width: 650px) {
+    .header {
+        display: grid;
+        grid-template-columns: 1fr max-content !important;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .header h2 {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        min-width: max-content;
+}
+
+    .add-book-button {
+        display: none;
+    }
+
+    button.add-book-button-small {
+        background-color: rgb(231, 230, 230);
+        padding: 0.5rem;
+        border-radius: 25px;
+        border: none;
+        display: inline-block;
+}
+
+    .search-input {
+        width: 100%;  
+    }
+
+    form.search-form {
+        width: auto;
+    }
+
+
+}
+
 
 /* -- CSS STYLES -- */
 
@@ -61,6 +209,13 @@ html, body {
     display: grid;
     grid-template-rows: max-content max-content;
 }
+
+button {
+    cursor: pointer;
+}
+
+
+/* Header */
 
 .header {
     display: grid;
@@ -71,6 +226,12 @@ html, body {
 .search-form {
     display: flex;
     flex-wrap: nowrap;
+    width: max-content;
+}
+
+.search-field-container {
+    position:relative;
+    width: 100%;
 }
 
 .search-button {
@@ -91,18 +252,59 @@ html, body {
     border-radius: 25px;
     flex: 1 1 none;
     min-width: 0;
-    height: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+.searchSuggestionsContainer {
+    display: none;
+    position: absolute;
+    top: 35px;
+    background-color: white;
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    max-width: auto;
+}
+
+.searchSuggestionsContainer.active{
+    display: block;
+}
+
+.searchSuggestionsContainer li {
+    padding: none;
+    margin: 7px 0;
+    list-style-type: none;
+    hyphens:auto;
+    cursor: pointer;
+}
+
+.searchSuggestionsContainer li > span {
+    font-weight: bold;
 }
 
 .header h2 {
     place-self: center;
+    min-width: max-content;
 }
 
-.add-books-button {
+.add-book-button-small {
+    display: none;
+}
+
+.addbk {
+    fill: black;
+    width: 1.8rem;
+    stroke:black;
+    stroke-width: 150px;
+}
+
+.add-book-button {
     justify-self: end;
     padding: 0.5rem 2.5rem;
     border-radius: 25px;
     border: none;
+    font-weight: 500;
+    min-width: max-content;
 }
 
 
@@ -115,15 +317,15 @@ html, body {
     gap: 2rem;
     
     padding: 2rem;
-    background-color: rgb(244, 242, 242);
+    background-color: rgb(253, 253, 253);
 }
 
 .card {
     display: grid;
     grid-template-rows: auto 1fr;
-
+    
     padding: 1rem;
-    background-color: #3D1E6D;
+    background-color: var(--primary-color);
     border-radius: 20px;
     max-height: 550px;
 }
@@ -133,31 +335,32 @@ html, body {
     justify-content: space-between;
 }
 
-.delete-book {
+.delete-book-button {
     background-color: transparent;
     border: none;
 }
 
 .delete-icon {
     width: 1.5rem;
-    fill: #ECA72C;
+    fill: var(--secondary-color);
 }
 
-.read-button { 
+.read-state-button { 
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.2em;
 
     padding: 0.4em 1.8em;  
     border-radius: 25px;
     border: none;
-    fill: #ECA72C;
-
+    fill: var(--secondary-color);
+    background-color: white;
     font-size: clamp(1rem, 1.1rem);
 }
 
-.read-icon {
-    width: 1.5em;
+.read-state-icon {
+    width: 1.2em;
+    color: var(--secondary-color);
 }
 
 .button-text{
@@ -170,7 +373,7 @@ html, body {
     flex-wrap: wrap;
 
     padding: 2rem;
-    color: #ECA72C;
+    color: var(--secondary-color);
     height: 100%;
 }
 
@@ -182,9 +385,17 @@ html, body {
     flex: 1 1 100px;
 }
 
+.genre-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+
 .genre.icon {
     width: clamp(4.67rem, 5vw + 2.7rem, 7rem);
-    fill:#ECA72C;
+    fill: var(--secondary-color);
     flex-shrink: 0;
 }
 
@@ -208,11 +419,114 @@ html, body {
     display: flex;
 
     margin-top: 0.5rem;
-    border-top: 0.5px solid #ECA72C;
+    border-top: 0.5px solid var(--secondary-color);
     padding-top: 0.5rem;
     font-size: clamp(0.9rem, 0.4vw + 0.8rem, 1.1rem);
 }
 
 .book-genre {
     margin-right: 0.9em;
+}
+
+
+/* Unread state card styles */
+
+.card[data-read="unread"] {
+    background-color: rgb(240, 240, 240);
+}
+
+
+.card[data-read="unread"] .read-state-button,
+.card[data-read="unread"] .delete-icon {
+        fill: grey;
+}
+
+.card[data-read="unread"] .read-state-icon {
+    color: var(--secondary-color); 
+}
+
+.card[data-read="unread"] .genre.icon {
+        fill: var(--primary-color);
+}
+
+.card[data-read="unread"] .card-content,
+.card[data-read="unread"] .book-author-input,
+.card[data-read="unread"] textarea,
+.card[data-read="unread"] select,
+.card[data-read="unread"] label,
+.card[data-read="unread"] input {
+    color: grey;
+}
+
+.card[data-read="unread"] .book-title,
+.card[data-read="unread"] form .book-title-input {
+    color: var(--primary-color);
+}
+
+
+
+/* CARD FORM CSS */
+textarea, select, label, input {
+    color: var(--secondary-color);
+}
+
+.book-genre-selection {
+    font-size: clamp(0.9rem, 0.4vw + 0.8rem, 1.1rem);
+    top: 20px;
+    margin-right: 0.5rem;
+    width: 70%;
+    max-width: 17ch;
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px;
+}
+
+form .book-info {
+    border-top: none;
+}
+
+textarea, input {
+    border: none;
+    border-bottom: solid 1px;
+}
+
+.book-title-input {
+    font-size: clamp(1.4rem, 1.5vw + 0.8rem, 2.1rem);
+    font-weight: bold;
+}
+
+.book-author-input {
+    font-size: clamp(1.1rem, 1vw + 0.7rem, 1.6rem);
+    font-weight: bold;
+}
+
+textarea {
+    background-color: transparent;
+    display: inline-block;
+    width: 100%;
+    height: 2.4em;
+    resize: none;
+    overflow-wrap: break-word;
+}
+
+.book-pages-input {
+    width: 30%;
+    max-width: 5ch;
+    margin-right: 4px;
+    font-size: clamp(0.9rem, 0.4vw + 0.8rem, 1.1rem);
+    appearance: none;
+    background-color: transparent;
+}
+
+.create-book-button {
+    border-radius: 25px;
+    border: none;
+    background-color: white;
+    padding: 0.4em 1.8em; 
+    font-size: clamp(0.9rem, 1.1rem);
+}
+
+.card *:focus {
+    outline: none;
+    caret-color: var(--secondary-color);
 }
