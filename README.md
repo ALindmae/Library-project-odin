@@ -20,6 +20,6 @@ The design is responsive and optimized for both landscape and portrait devices.
 - **JavaScript** (Dynamic book creation, interactivity, and search filtering)
 
 ## Screenshots
-![App Screenshot – Desktop](./library-desktop.png)  
-![App Screenshot – Tablet](./library-tablet.png)  
-![App Screenshot – Mobile](./library-mobile.png)
+![App Screenshot – Desktop](./library_desktop.png)  
+![App Screenshot – Tablet](./library_tablet.png)  
+![App Screenshot – Mobile](./library_mobile.png)
