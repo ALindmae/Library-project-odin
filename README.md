@@ -22,4 +22,3 @@ The design is responsive and optimized for both landscape and portrait devices.
 ## Screenshots
 ![App Screenshot – Desktop](./library_desktop.png)  
 ![App Screenshot – Tablet](./library_tablet.png)  
-![App Screenshot – Mobile](./library_mobile.png)
