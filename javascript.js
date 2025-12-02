@@ -50,14 +50,16 @@ const searchBtn = document.querySelector('.search-button');
 const library = [];
 
 // ====== CONSTRUCTORS AND DATA LOGIC ====== //
-function Book (author, title, pages, read, genre, id) {
-    if (!new.target) throw Error("Need to use new");
-    this.author = author;
-    this.title = title;
-    this.pages = pages;
-    this.read = read;
-    this.genre = genre;
-    this.id = id;
+class Book {
+    constructor (author, title, pages, read, genre, id)
+    {    
+        this.author = author;
+        this.title = title;
+        this.pages = pages;
+        this.read = read;
+        this.genre = genre;
+        this.id = id;
+    }
 };
 
 function addBook (author, title, pages, read, genre, id) {
